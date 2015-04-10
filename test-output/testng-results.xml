@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5169" started-at="2015-04-08T07:50:25Z" finished-at="2015-04-08T07:50:30Z">
+  <suite name="Default suite" duration-ms="7150" started-at="2015-04-10T10:02:44Z" finished-at="2015-04-10T10:02:51Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5169" started-at="2015-04-08T07:50:25Z" finished-at="2015-04-08T07:50:30Z">
-      <class name="adressbook.training.tests.AddContact">
-        <test-method status="PASS" signature="addContact()[pri:0, instance:adressbook.training.tests.AddContact@17d59ff]" name="addContact" duration-ms="3194" started-at="2015-04-08T10:50:27Z" finished-at="2015-04-08T10:50:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addContact -->
-      </class> <!-- adressbook.training.tests.AddContact -->
-      <class name="adressbook.training.tests.AddGroup">
-        <test-method status="PASS" signature="init()[pri:0, instance:adressbook.training.tests.AddGroup@da416]" name="init" is-config="true" duration-ms="201" started-at="2015-04-08T10:50:25Z" finished-at="2015-04-08T10:50:25Z">
+    <test name="Default test" duration-ms="7150" started-at="2015-04-10T10:02:44Z" finished-at="2015-04-10T10:02:51Z">
+      <class name="com.example.tests.ContactCreationTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.example.tests.ContactCreationTest@1d4c4b7]" name="init" is-config="true" duration-ms="3506" started-at="2015-04-10T13:02:44Z" finished-at="2015-04-10T13:02:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="addGroup()[pri:0, instance:adressbook.training.tests.AddGroup@da416]" name="addGroup" duration-ms="1498" started-at="2015-04-08T10:50:25Z" finished-at="2015-04-08T10:50:27Z">
+        <test-method status="PASS" signature="addContact()[pri:0, instance:com.example.tests.ContactCreationTest@1d4c4b7]" name="addContact" duration-ms="3379" started-at="2015-04-10T13:02:47Z" finished-at="2015-04-10T13:02:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addGroup -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:adressbook.training.tests.AddGroup@da416]" name="stop" is-config="true" duration-ms="269" started-at="2015-04-08T10:50:30Z" finished-at="2015-04-08T10:50:30Z">
+        </test-method> <!-- addContact -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:com.example.tests.ContactCreationTest@1d4c4b7]" name="stop" is-config="true" duration-ms="259" started-at="2015-04-10T13:02:50Z" finished-at="2015-04-10T13:02:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-      </class> <!-- adressbook.training.tests.AddGroup -->
+      </class> <!-- com.example.tests.ContactCreationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
