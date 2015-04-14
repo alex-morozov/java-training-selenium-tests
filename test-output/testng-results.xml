@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7150" started-at="2015-04-10T10:02:44Z" finished-at="2015-04-10T10:02:51Z">
+  <suite name="Default suite" duration-ms="4194" started-at="2015-04-14T06:25:07Z" finished-at="2015-04-14T06:25:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7150" started-at="2015-04-10T10:02:44Z" finished-at="2015-04-10T10:02:51Z">
-      <class name="com.example.tests.ContactCreationTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.example.tests.ContactCreationTest@1d4c4b7]" name="init" is-config="true" duration-ms="3506" started-at="2015-04-10T13:02:44Z" finished-at="2015-04-10T13:02:47Z">
+    <test name="Default test" duration-ms="4194" started-at="2015-04-14T06:25:07Z" finished-at="2015-04-14T06:25:11Z">
+      <class name="com.example.tests.ContactRemovalTests">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.example.tests.ContactRemovalTests@11b16a7]" name="init" is-config="true" duration-ms="3344" started-at="2015-04-14T09:25:07Z" finished-at="2015-04-14T09:25:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="addContact()[pri:0, instance:com.example.tests.ContactCreationTest@1d4c4b7]" name="addContact" duration-ms="3379" started-at="2015-04-10T13:02:47Z" finished-at="2015-04-10T13:02:50Z">
+        <test-method status="PASS" signature="deleteContact()[pri:0, instance:com.example.tests.ContactRemovalTests@11b16a7]" name="deleteContact" duration-ms="548" started-at="2015-04-14T09:25:10Z" finished-at="2015-04-14T09:25:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addContact -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:com.example.tests.ContactCreationTest@1d4c4b7]" name="stop" is-config="true" duration-ms="259" started-at="2015-04-10T13:02:50Z" finished-at="2015-04-10T13:02:51Z">
+        </test-method> <!-- deleteContact -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:com.example.tests.ContactRemovalTests@11b16a7]" name="stop" is-config="true" duration-ms="298" started-at="2015-04-14T09:25:11Z" finished-at="2015-04-14T09:25:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-      </class> <!-- com.example.tests.ContactCreationTest -->
+      </class> <!-- com.example.tests.ContactRemovalTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

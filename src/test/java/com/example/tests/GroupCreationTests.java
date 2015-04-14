@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 
-public class GroupCreationTest extends TestBase{
+public class GroupCreationTests extends TestBase{
 
 	@Test
 	public void addGroup (){
@@ -16,7 +16,7 @@ public class GroupCreationTest extends TestBase{
 	    group.groupname="name";
 	    group.groupfooter="footer";
 	    group.groupheader="header";
-	    app.getGroupHelper().fillGroupCreationForm(group);
+	    app.getGroupHelper().fillGroupForm(group);
 	    app.getNavigationHelper().goToGroupsPage();	   	   
 	}
 }

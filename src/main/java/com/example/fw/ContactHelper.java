@@ -37,6 +37,22 @@ public class ContactHelper extends HelperBase {
 		type(By.name("phone2"), contact.homeadress);
 	}
 
+	public void initContactModification(int index) {
+		selectContactByIndex(index);		
+	}
+
+	public void selectContactByIndex(int index) {
+		click(By.xpath("//*[@id='maintable']/tbody/tr[" + index + "]/td[7]/a/img"));
+	}
+
+	public void submitContactModification() {
+		click(By.name("update"));		
+	}
+
+	public void deleteContact() {
+		click(By.name("update"));		
+	}
+
 	
 
 }
