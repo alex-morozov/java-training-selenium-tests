@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4194" started-at="2015-04-14T06:25:07Z" finished-at="2015-04-14T06:25:11Z">
+  <suite name="Default suite" duration-ms="5134" started-at="2015-04-15T07:41:46Z" finished-at="2015-04-15T07:41:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4194" started-at="2015-04-14T06:25:07Z" finished-at="2015-04-14T06:25:11Z">
-      <class name="com.example.tests.ContactRemovalTests">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.example.tests.ContactRemovalTests@11b16a7]" name="init" is-config="true" duration-ms="3344" started-at="2015-04-14T09:25:07Z" finished-at="2015-04-14T09:25:10Z">
+    <test name="Default test" duration-ms="5134" started-at="2015-04-15T07:41:46Z" finished-at="2015-04-15T07:41:52Z">
+      <class name="com.example.tests.GroupModificationTests">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.example.tests.GroupModificationTests@d03a00]" name="init" is-config="true" duration-ms="3457" started-at="2015-04-15T10:41:46Z" finished-at="2015-04-15T10:41:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="deleteContact()[pri:0, instance:com.example.tests.ContactRemovalTests@11b16a7]" name="deleteContact" duration-ms="548" started-at="2015-04-14T09:25:10Z" finished-at="2015-04-14T09:25:11Z">
+        <test-method status="FAIL" signature="modifySomeGroup()[pri:0, instance:com.example.tests.GroupModificationTests@d03a00]" name="modifySomeGroup" duration-ms="1447" started-at="2015-04-15T10:41:50Z" finished-at="2015-04-15T10:41:51Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lists differ at element [0]: GroupData [name= new name] != GroupData [name=(Rob] expected [GroupData [name= new name]] but found [GroupData [name=(Rob]]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lists differ at element [0]: GroupData [name= new name] != GroupData [name=(Rob] expected [GroupData [name= new name]] but found [GroupData [name=(Rob]]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.example.tests.GroupModificationTests.modifySomeGroup(GroupModificationTests.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:128)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1203)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1128)
+	at org.testng.TestNG.run(TestNG.java:1036)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteContact -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:com.example.tests.ContactRemovalTests@11b16a7]" name="stop" is-config="true" duration-ms="298" started-at="2015-04-14T09:25:11Z" finished-at="2015-04-14T09:25:11Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:com.example.tests.GroupModificationTests@d03a00]" name="stop" is-config="true" duration-ms="223" started-at="2015-04-15T10:41:51Z" finished-at="2015-04-15T10:41:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-      </class> <!-- com.example.tests.ContactRemovalTests -->
+      </class> <!-- com.example.tests.GroupModificationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
