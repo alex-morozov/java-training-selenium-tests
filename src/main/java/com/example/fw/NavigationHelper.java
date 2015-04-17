@@ -16,4 +16,8 @@ public class NavigationHelper extends HelperBase {
 		driver.get(manager.baseURL);
 	}
 
+	public void returnToHomePage() {
+		click(By.linkText("home page"));		
+	}
+
 }

@@ -1,6 +1,11 @@
 package com.example.tests;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
+
+import java.util.Collections;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -8,25 +13,21 @@ import org.testng.annotations.Test;
 
 public class ContactCreationTests extends TestBase {
 	
-	@Test
-	public void addContact (){
+	@Test (dataProvider = "randomValidContactGenerator")
+	public void addContact (ContactData contact){
 		app.getNavigationHelper().openMainPage();
-	    app.getContactHelper().goToAddContact();
-	    ContactData contact = new ContactData();
-	    contact.adress="New-York";
-	    contact.daybirth="10";
-	    contact.email="test@gmail.com";
-	    contact.firstname="John";
-	    contact.group="Rob";
-	    contact.homeadress="Wales";
-	    contact.homephone="2-12-85-06";
-	    contact.mobilephone="911";
-	    contact.monthbirth="May";
-	    contact.secondadress="London";
-	    contact.secondname="Doe";
-	    contact.workphone="02";
-	    contact.yearbirth="1988";	  
+	    app.getContactHelper().goToAddContact();	    
+		    
+	    List<ContactData> oldList = app.getContactHelper().getContacts();		   
+	    
 	    app.getContactHelper().fillContactForm(contact);	  
 	    app.getContactHelper().submit();
+	    app.getNavigationHelper().returnToHomePage();	    
+	    
+	    List<ContactData> newList = app.getContactHelper().getContacts();	
+	    
+	    oldList.add(contact);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
  }
 }
