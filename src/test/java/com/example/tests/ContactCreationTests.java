@@ -9,20 +9,22 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import static com.example.fw.ContactHelper.CREATION;
+
 
 
 public class ContactCreationTests extends TestBase {
 	
 	@Test (dataProvider = "randomValidContactGenerator")
 	public void addContact (ContactData contact){
-		app.getNavigationHelper().openMainPage();
+		app.navigateTo().mainPage();
 	    app.getContactHelper().goToAddContact();	    
 		    
 	    List<ContactData> oldList = app.getContactHelper().getContacts();		   
 	    
-	    app.getContactHelper().fillContactForm(contact);	  
+	    app.getContactHelper().fillContactForm(contact, CREATION);	  
 	    app.getContactHelper().submit();
-	    app.getNavigationHelper().returnToHomePage();	    
+	    app.navigateTo().returnToHomePage();	    
 	    
 	    List<ContactData> newList = app.getContactHelper().getContacts();	
 	    

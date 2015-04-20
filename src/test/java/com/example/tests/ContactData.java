@@ -11,9 +11,9 @@ public class ContactData implements Comparable<ContactData> {
 	public String mobilephone;
 	public String workphone;
 	public String email;
-	public String daybirth;
-	public String monthbirth;
-	public String yearbirth;
+	public String birthDay;
+	public String birthMonth;
+	public String birthYear;
 	public String group;
 	public String secondadress;
 	public String homeadress;
@@ -29,9 +29,9 @@ public class ContactData implements Comparable<ContactData> {
 		this.mobilephone = mobilephone;
 		this.workphone = workphone;
 		this.email = email;
-		this.daybirth = daybirth;
-		this.monthbirth = monthbirth;
-		this.yearbirth = yearbirth;
+		this.birthDay = daybirth;
+		this.birthMonth = monthbirth;
+		this.birthYear = yearbirth;
 		this.group = group;
 		this.secondadress = secondadress;
 		this.homeadress = homeadress;
@@ -48,8 +48,8 @@ public class ContactData implements Comparable<ContactData> {
 		return "ContactData [firstname=" + firstname + ", lastname="
 				+ lastname + ", adress=" + adress + ", homephone="
 				+ homephone + ", mobilephone=" + mobilephone + ", workphone="
-				+ workphone + ", email=" + email + ", daybirth=" + daybirth
-				+ ", monthbirth=" + monthbirth + ", yearbirth=" + yearbirth
+				+ workphone + ", email=" + email + ", birthDay=" + birthDay
+				+ ", birthMonth=" + birthMonth + ", birthYear=" + birthYear
 				+ ", group=" + group + ", secondadress=" + secondadress
 				+ ", homeadress=" + homeadress + "]";
 	}

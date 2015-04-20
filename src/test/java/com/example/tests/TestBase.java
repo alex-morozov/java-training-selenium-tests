@@ -32,10 +32,10 @@ public class TestBase {
 	public Iterator<Object[]> randomValidGroupGenerator(){
 	List<Object[]> list = new ArrayList<Object[]>();		
 	for (int i = 0; i < 5; i++){
-		GroupData group = new GroupData();
-		    group.name = generateRandomString();
-		    group.footer= generateRandomString();
-		    group.header= generateRandomString();
+		GroupData group = new GroupData()
+		.withName(generateRandomString())
+		.withHeader(generateRandomString())
+		.withFooter(generateRandomString());		    
 		    list.add(new Object[]{group});
 	}
 	return list.iterator();
@@ -53,7 +53,7 @@ public class TestBase {
 		contact.mobilephone = generateRandomString();
 		contact.workphone = generateRandomString();
 		contact.email = generateRandomString();
-		contact.yearbirth = generateRandomString();
+		contact.birthYear = generateRandomString();
 		contact.secondadress = generateRandomString();
 		contact.homeadress = generateRandomString();
 		list.add(new Object[]{contact});

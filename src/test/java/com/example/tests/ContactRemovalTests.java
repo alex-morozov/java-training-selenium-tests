@@ -12,7 +12,7 @@ public class ContactRemovalTests extends TestBase {
 	
 	@Test (dataProvider = "randomValidContactGenerator")
 	public void deleteContact (){
-		app.getNavigationHelper().openMainPage();
+		app.navigateTo().mainPage();
 		
 		List<ContactData> oldList = app.getContactHelper().getContacts();	
 		
@@ -21,7 +21,7 @@ public class ContactRemovalTests extends TestBase {
 		
 	    app.getContactHelper().initContactModification(index);	    	  
 	    app.getContactHelper().deleteContact(); // может отрабатывать некорректно, поскольку кнопки Update и Delete имеют одинаковые имена
-	    app.getNavigationHelper().returnToHomePage();
+	    app.navigateTo().returnToHomePage();
 	    
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    

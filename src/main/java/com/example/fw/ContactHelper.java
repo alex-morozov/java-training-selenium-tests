@@ -13,6 +13,9 @@ import com.example.tests.TestBase;
 
 
 public class ContactHelper extends HelperBase {
+	
+	public static boolean CREATION = true;
+	public static boolean MODIFICATION = false;
 
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);		
@@ -26,7 +29,7 @@ public class ContactHelper extends HelperBase {
 		click(By.name("submit"));
 	}
 
-	public void fillContactForm(ContactData contact) {
+	public void fillContactForm(ContactData contact, boolean formType) {
 		type(By.name("firstname"), contact.firstname);	
 		type(By.name("lastname"), contact.lastname);
 		type(By.name("address"), contact.adress);		
@@ -34,9 +37,16 @@ public class ContactHelper extends HelperBase {
 		type(By.name("mobile"), contact.mobilephone);		
 		type(By.name("work"), contact.workphone);		
 		type(By.name("email"), contact.email);		
-		selectByText(By.name("bday"), contact.daybirth);
-		selectByText(By.name("bmonth"), contact.monthbirth);		
-		type(By.name("byear"), contact.yearbirth);	
+		selectByText(By.name("bday"), contact.birthDay);
+		selectByText(By.name("bmonth"), contact.birthMonth);		
+		type(By.name("byear"), contact.birthYear);	
+		if (formType == CREATION){
+			//selectByText(By.name("new_group"), "group 1");
+		} else {
+			if (driver.findElements(By.name("new_group")).size() != 0){
+				throw new Error("Group selector exists in contact modification form");
+			}
+		}
 		selectByText(By.name("new_group"), contact.group);	
 		type(By.name("address2"), contact.secondadress);		
 		type(By.name("phone2"), contact.homeadress);
