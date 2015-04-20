@@ -20,10 +20,8 @@ public class GroupModificationTests extends TestBase {
 		Random rnd = new Random();
 		int index = rnd.nextInt(oldList.size()-1);
 		
-		app.getGroupHelper().modifyGroup(index, group);
-	    
-	    
-		SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();	
+		app.getGroupHelper().modifyGroup(index, group);	    
+		
 	    
 		assertThat(oldList, equalTo(oldList.without(index).withAdded(group)));
       

@@ -1,15 +1,11 @@
 package com.example.fw;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
 import com.example.tests.ContactData;
-import com.example.tests.GroupData;
-import com.example.tests.TestBase;
+import com.example.utils.SortedListOf;
+
 
 
 public class ContactHelper extends HelperBase {
@@ -20,26 +16,80 @@ public class ContactHelper extends HelperBase {
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);		
 	}
-
-	public void goToAddContact() {
-		click(By.linkText("add new"));
+	
+	private SortedListOf<ContactData> cachedContacts;
+	
+	public SortedListOf<ContactData> getContacts() {
+		if (cachedContacts == null){
+						rebuildCache();
+					}
+					return cachedContacts;
+	}
+		
+	
+	private void rebuildCache() {
+		cachedContacts = new SortedListOf<ContactData> ();
+		manager.navigateTo().mainPage();
+		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
+		for (WebElement checkbox : checkboxes) {			
+			String title = checkbox.getAttribute("title");			
+			String name = title.substring("Select (".length(), title.length() - ")".length() );
+			cachedContacts.add(new ContactData().withLastname(name));
+		}		
 	}
 	
-	public void submit() {
+	public ContactHelper createGroup(ContactData contact) {
+		manager.navigateTo().mainPage();
+	    goToAddContact();
+	    fillContactForm(contact, CREATION);	  
+	    submitContactCreation();
+	    manager.navigateTo().returnToHomePage();
+	    rebuildCache();
+	    return this;
+	}
+	
+	public ContactHelper modifyContact(int index, ContactData contact) {
+	    initContactModification(index);	        
+	    fillContactForm(contact, MODIFICATION);	  
+	    submitContactModification();
+	    manager.navigateTo().returnToHomePage();	
+	    rebuildCache();
+	    return this;
+}
+
+
+public ContactHelper deleteContact(int index) {
+	initContactModification(index);	    	  
+    submitContactDeletion(); // может отрабатывать некорректно, поскольку кнопки Update и Delete имеют одинаковые имена
+    manager.navigateTo().returnToHomePage();
+    rebuildCache();	
+    return this;
+}
+	
+	
+
+	public ContactHelper goToAddContact() {
+		click(By.linkText("add new"));
+		return this;
+	}
+	
+	public ContactHelper submitContactCreation() {
 		click(By.name("submit"));
+		cachedContacts = null;
+		return this;
 	}
 
-	public void fillContactForm(ContactData contact, boolean formType) {
-		type(By.name("firstname"), contact.firstname);	
-		type(By.name("lastname"), contact.lastname);
-		type(By.name("address"), contact.adress);		
-		type(By.name("home"), contact.homephone);		
-		type(By.name("mobile"), contact.mobilephone);		
-		type(By.name("work"), contact.workphone);		
-		type(By.name("email"), contact.email);		
-		selectByText(By.name("bday"), contact.birthDay);
-		selectByText(By.name("bmonth"), contact.birthMonth);		
-		type(By.name("byear"), contact.birthYear);	
+	public ContactHelper fillContactForm(ContactData contact, boolean formType) {
+		type(By.name("firstname"), contact.getFirstname());	
+		type(By.name("lastname"), contact.getLastname());
+		type(By.name("address"), contact.getAdress());		
+		type(By.name("home"), contact.getHomephone());		
+		type(By.name("mobile"), contact.getMobilephone());		
+		type(By.name("work"), contact.getWorkphone());		
+		type(By.name("email"), contact.getEmail());		
+		selectByText(By.name("bday"), contact.getBirthDay());
+		selectByText(By.name("bmonth"), contact.getBirthMonth());		
+		type(By.name("byear"), contact.getBirthYear());	
 		if (formType == CREATION){
 			//selectByText(By.name("new_group"), "group 1");
 		} else {
@@ -47,38 +97,39 @@ public class ContactHelper extends HelperBase {
 				throw new Error("Group selector exists in contact modification form");
 			}
 		}
-		selectByText(By.name("new_group"), contact.group);	
-		type(By.name("address2"), contact.secondadress);		
-		type(By.name("phone2"), contact.homeadress);
+		selectByText(By.name("new_group"), contact.getGroup());	
+		type(By.name("address2"), contact.getSecondadress());		
+		type(By.name("phone2"), contact.getHomeadress());
+		return this;
 	}
 
-	public void initContactModification(int index) {
-		selectContactByIndex(index);		
+	public ContactHelper initContactModification(int index) {
+		selectContactByIndex(index);	
+		return this;
 	}
 
-	public void selectContactByIndex(int index) {
+	public ContactHelper selectContactByIndex(int index) {
 		click(By.xpath("//*[@id='maintable']/tbody/tr[" + index + "]/td[7]/a/img"));
+		return this;
 	}
 
-	public void submitContactModification() {
-		click(By.name("update"));		
+	public ContactHelper submitContactModification() {
+		click(By.name("update"));
+		cachedContacts = null;
+		return this;
 	}
 
-	public void deleteContact() {
-		click(By.name("update"));		
+	public ContactHelper submitContactDeletion() {
+		click(By.name("update"));
+		cachedContacts = null;
+		return this;
 	}
 
-	public List<ContactData> getContacts() {
-		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-		for (WebElement checkbox : checkboxes) {
-			ContactData contact = new ContactData();
-			String title = checkbox.getAttribute("title");			
-			contact.lastname = title.substring("Select (".length(), title.length() - ")".length() );
-			contacts.add(contact);
-		}
-		return contacts;
-	}
+
+	
+	
+
+	
 
 	
 

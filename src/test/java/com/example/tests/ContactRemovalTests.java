@@ -1,33 +1,26 @@
 package com.example.tests;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.Matchers.*;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
-
 import org.testng.annotations.Test;
+import com.example.utils.SortedListOf;
 
 public class ContactRemovalTests extends TestBase {
 	
-	@Test (dataProvider = "randomValidContactGenerator")
-	public void deleteContact (){
-		app.navigateTo().mainPage();
-		
-		List<ContactData> oldList = app.getContactHelper().getContacts();	
+	@Test 
+	public void deleteContact (){				
+		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();	
 		
 		Random rnd = new Random();
 		int index = rnd.nextInt(oldList.size()-1);
 		
-	    app.getContactHelper().initContactModification(index);	    	  
-	    app.getContactHelper().deleteContact(); // может отрабатывать некорректно, поскольку кнопки Update и Delete имеют одинаковые имена
-	    app.navigateTo().returnToHomePage();
+		app.getContactHelper().deleteContact(index);	    
 	    
-	    List<ContactData> newList = app.getContactHelper().getContacts();
+	    SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 	    
-	    oldList.remove(index);
-	    Collections.sort(oldList);
-	    assertEquals(newList, oldList);
+	    assertThat(newList, equalTo(oldList.without(index)));
 }
 
 }
