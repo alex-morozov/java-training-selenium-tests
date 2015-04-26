@@ -23,7 +23,7 @@ public class ContactHelper extends HelperBase {
 		if (cachedContacts == null){
 						rebuildCache();
 					}
-					return cachedContacts;
+		return new SortedListOf<ContactData>(cachedContacts);
 	}
 		
 	

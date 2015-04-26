@@ -22,8 +22,9 @@ public class GroupModificationTests extends TestBase {
 		
 		app.getGroupHelper().modifyGroup(index, group);	    
 		
-	    
-		assertThat(oldList, equalTo(oldList.without(index).withAdded(group)));
+		SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+		
+		assertThat(newList, equalTo(oldList.without(index).withAdded(group)));
       
 	}
 

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium-tests" verbose="1">	 
+	    <test name="JavaExamples"> 	          
+		<packages>
+		    <package name = "com.example.tests"/>
+		</packages>	
+	</test>
+</suite>
+
+
+
+
