@@ -12,9 +12,9 @@ import java.util.Properties;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-
 import com.example.fw.ApplicationManager;
 import static com.example.tests.GroupDataGenerator.*;
+import static com.example.tests.ContactDataGenerator.*;
 
 public class TestBase {
 	
@@ -48,24 +48,17 @@ public class TestBase {
 	}
 
 	@DataProvider
-	public Iterator<Object[]> randomValidContactGenerator(){	
-		List<Object[]> list = new ArrayList<Object[]>();		
-	for (int i = 0; i < 5; i++){
-		ContactData contact = new ContactData()
-		.withFirstname(generateRandomString())
-		.withLastname(generateRandomString())
-		.withAdress (generateRandomString())
-		.withHomephone(generateRandomString())
-		.withMobilephone(generateRandomString())
-		.withWorkphone(generateRandomString())
-		.withEmail(generateRandomString())
-		.withBirthYear(generateRandomString())
-		.withSecondadress(generateRandomString())
-		.withHomeadress(generateRandomString());
-		list.add(new Object[]{contact});
-	}
-	return list.iterator();
+	public Iterator<Object[]> randomValidContactGenerator(){
+		return wrapContactsForDataProvider(generateRandomContacts(5)).iterator();
 }
+	
+	public static List<Object[]> wrapContactsForDataProvider(List<ContactData> contacts) {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (ContactData contact : contacts) {
+			list.add(new Object[]{contact});
+		}
+		return list;
+	}
 
 	
 	

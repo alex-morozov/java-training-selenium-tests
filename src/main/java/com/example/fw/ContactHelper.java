@@ -34,7 +34,7 @@ public class ContactHelper extends HelperBase {
 		for (WebElement checkbox : checkboxes) {			
 			String title = checkbox.getAttribute("title");			
 			String name = title.substring("Select (".length(), title.length() - ")".length() );
-			cachedContacts.add(new ContactData().withLastname(name));
+			cachedContacts.add(new ContactData().withLastName(name));
 		}		
 	}
 	
@@ -80,12 +80,12 @@ public ContactHelper deleteContact(int index) {
 	}
 
 	public ContactHelper fillContactForm(ContactData contact, boolean formType) {
-		type(By.name("firstname"), contact.getFirstname());	
-		type(By.name("lastname"), contact.getLastname());
+		type(By.name("firstname"), contact.getFirstName());	
+		type(By.name("lastname"), contact.getLastName());
 		type(By.name("address"), contact.getAdress());		
-		type(By.name("home"), contact.getHomephone());		
-		type(By.name("mobile"), contact.getMobilephone());		
-		type(By.name("work"), contact.getWorkphone());		
+		type(By.name("home"), contact.getHomePhone());		
+		type(By.name("mobile"), contact.getMobilePhone());		
+		type(By.name("work"), contact.getWorkPhone());		
 		type(By.name("email"), contact.getEmail());		
 		selectByText(By.name("bday"), contact.getBirthDay());
 		selectByText(By.name("bmonth"), contact.getBirthMonth());		
@@ -98,8 +98,8 @@ public ContactHelper deleteContact(int index) {
 			}
 		}
 		selectByText(By.name("new_group"), contact.getGroup());	
-		type(By.name("address2"), contact.getSecondadress());		
-		type(By.name("phone2"), contact.getHomeadress());
+		type(By.name("address2"), contact.getSecondAdress());		
+		type(By.name("phone2"), contact.getHomeAdress());
 		return this;
 	}
 
