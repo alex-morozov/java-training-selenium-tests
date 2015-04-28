@@ -16,30 +16,28 @@ public class ContactData implements Comparable<ContactData> {
 	private String secondAdress;
 	private String homeAdress;
 
-	public ContactData(String firstname, String secondname, String adress,
-			String homephone, String mobilephone, String workphone,
-			String email, String daybirth, String monthbirth, String yearbirth,
-			String group, String secondadress, String homeadress) {
-		this.firstName = firstname;
-		this.lastName = secondname;
+	public ContactData(String firstName, String secondName, String adress,
+			String homePhone, String mobilePhone, String workPhone,
+			String email, String birthDay, String birthMonth, String birthYear,
+			String group, String secondAdress, String homeAdress) {
+		this.firstName = firstName;
+		this.lastName = secondName;
 		this.adress = adress;
-		this.homePhone = homephone;
-		this.mobilePhone = mobilephone;
-		this.workPhone = workphone;
+		this.homePhone = homePhone;
+		this.mobilePhone = mobilePhone;
+		this.workPhone = workPhone;
 		this.email = email;
-		this.birthDay = daybirth;
-		this.birthMonth = monthbirth;
-		this.birthYear = yearbirth;
+		this.birthDay = birthDay;
+		this.birthMonth = birthMonth;
+		this.birthYear = birthYear;
 		this.group = group;
-		this.secondAdress = secondadress;
-		this.homeAdress = homeadress;
+		this.secondAdress = secondAdress;
+		this.homeAdress = homeAdress;
 	}
 	
 	public ContactData() {
 		
-	}
-	
-	
+	}	
 
 	@Override
 	public String toString() {
@@ -50,9 +48,7 @@ public class ContactData implements Comparable<ContactData> {
 				+ ", birthMonth=" + birthMonth + ", birthYear=" + birthYear
 				+ ", group=" + group + ", secondAdress=" + secondAdress
 				+ ", homeAdress=" + homeAdress + "]";
-	}
-	
-	
+	}	
 
 	@Override
 	public int hashCode() {

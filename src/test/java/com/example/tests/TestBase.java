@@ -18,7 +18,7 @@ import static com.example.tests.ContactDataGenerator.*;
 
 public class TestBase {
 	
-	protected ApplicationManager app;
+	protected static ApplicationManager app;
 		
 	@BeforeTest (alwaysRun = true)
 	  public void setUp () throws FileNotFoundException, IOException{

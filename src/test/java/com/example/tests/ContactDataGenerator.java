@@ -48,7 +48,7 @@ public class ContactDataGenerator {
 	
     public static List<ContactData> loadContactsFromXmlFile(File file) {
     	XStream xstream = new XStream();
-		xstream.alias("group", GroupData.class);
+		xstream.alias("contact", ContactData.class);
 		return (List<ContactData>) xstream.fromXML(file);	
 		
 	}
@@ -66,7 +66,7 @@ public class ContactDataGenerator {
 					+ contact.getBirthDay() + ","
 					+ contact.getBirthMonth() + ","
 					+ contact.getBirthYear() + ","
-					+ contact.getGroup() + ","
+				//	+ contact.getGroup() + ","
 					+ contact.getSecondAdress() + ","
 					+ contact.getHomeAdress()					
 					+ ",!" + "\n");
@@ -93,7 +93,7 @@ public class ContactDataGenerator {
 			.withBirthDay(part[7])
 			.withBirthMonth(part[8])
 			.withBirthYear(part[9])
-			.withGroup(part[10])
+			//.withGroup(part[10])
 			.withSecondAdress(part[11])
 			.withHomeAdress(part[12]);
 			list.add(contact);
@@ -117,7 +117,7 @@ public class ContactDataGenerator {
 			.withBirthDay(generateRandomString())
 			.withBirthMonth(generateRandomString())
 			.withBirthYear(generateRandomString())
-			.withGroup(generateRandomString())
+			//.withGroup(generateRandomString())
 			.withSecondAdress(generateRandomString())
 			.withHomeAdress(generateRandomString());		    
 			    list.add(contact);
@@ -130,11 +130,7 @@ public class ContactDataGenerator {
 		if(rnd.nextInt(3) == 0){
 		    return "";
 		} else{
-			return "test" + rnd.nextInt();
-				
+			return "test" + rnd.nextInt();				
 		}
-	}
-
-	
-	
+	}	
 }

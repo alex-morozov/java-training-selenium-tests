@@ -60,7 +60,7 @@ public class ContactHelper extends HelperBase {
 
 public ContactHelper deleteContact(int index) {
 	initContactModification(index);	    	  
-    submitContactDeletion(); // может отрабатывать некорректно, поскольку кнопки Update и Delete имеют одинаковые имена
+    submitContactDeletion();
     manager.navigateTo().returnToHomePage();
     rebuildCache();	
     return this;
@@ -97,7 +97,7 @@ public ContactHelper deleteContact(int index) {
 				throw new Error("Group selector exists in contact modification form");
 			}
 		}
-		selectByText(By.name("new_group"), contact.getGroup());	
+		//selectByText(By.name("new_group"), contact.getGroup());	
 		type(By.name("address2"), contact.getSecondAdress());		
 		type(By.name("phone2"), contact.getHomeAdress());
 		return this;
@@ -120,7 +120,7 @@ public ContactHelper deleteContact(int index) {
 	}
 
 	public ContactHelper submitContactDeletion() {
-		click(By.name("update"));
+		click(By.xpath("(//input[@name='update'])[2]"));
 		cachedContacts = null;
 		return this;
 	}
