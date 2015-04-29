@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.util.Iterator;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.example.fw.ContactData;
 import com.example.utils.SortedListOf;
-import static com.example.tests.ContactDataGenerator.*;
+
+import static com.example.fw.ContactDataGenerator.*;
 
 public class ContactCreationTests extends TestBase {
 	    @DataProvider

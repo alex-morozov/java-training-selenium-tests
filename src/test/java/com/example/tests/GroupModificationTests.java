@@ -9,6 +9,7 @@ import java.util.Random;
 
 import org.testng.annotations.Test;
 
+import com.example.fw.GroupData;
 import com.example.utils.SortedListOf;
 
 public class GroupModificationTests extends TestBase {

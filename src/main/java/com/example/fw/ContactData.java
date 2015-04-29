@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.example.fw;
 
 
 public class ContactData implements Comparable<ContactData> {

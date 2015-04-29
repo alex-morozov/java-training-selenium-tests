@@ -13,8 +13,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import com.example.fw.ApplicationManager;
-import static com.example.tests.GroupDataGenerator.*;
-import static com.example.tests.ContactDataGenerator.*;
+import com.example.fw.ContactData;
+import com.example.fw.GroupData;
+
+import static com.example.fw.ContactDataGenerator.*;
+import static com.example.fw.GroupDataGenerator.*;
 
 public class TestBase {
 	

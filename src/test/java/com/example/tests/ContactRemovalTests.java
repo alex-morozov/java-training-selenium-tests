@@ -5,6 +5,8 @@ import static org.hamcrest.Matchers.*;
 
 import java.util.Random;
 import org.testng.annotations.Test;
+
+import com.example.fw.ContactData;
 import com.example.utils.SortedListOf;
 
 public class ContactRemovalTests extends TestBase {

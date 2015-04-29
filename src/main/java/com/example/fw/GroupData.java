@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.example.fw;
 
 public class GroupData implements Comparable<GroupData>{
 	private String name;
