@@ -7,80 +7,10 @@
     <mobilePhone>test-393834907</mobilePhone>
     <workPhone>test168187298</workPhone>
     <email>test1598295995</email>
-    <birthDay></birthDay>
+    <birthDay>-</birthDay>
     <birthMonth>October</birthMonth>
     <birthYear></birthYear>   
     <secondAdress></secondAdress>
     <homeAdress>test-324423379</homeAdress>
-  </contact>
-  <contact>
-    <firstName>test1452369792</firstName>
-    <lastName>test-166855390</lastName>
-    <adress>test-868109611</adress>
-    <homePhone></homePhone>
-    <mobilePhone>test2096923549</mobilePhone>
-    <workPhone></workPhone>
-    <email></email>
-    <birthDay>10</birthDay>
-    <birthMonth>March</birthMonth>
-    <birthYear></birthYear>   
-    <secondAdress></secondAdress>
-    <homeAdress>test1687681412</homeAdress>
-  </contact>
-  <contact>
-    <firstName>test1568033309</firstName>
-    <lastName></lastName>
-    <adress>test1138940817</adress>
-    <homePhone></homePhone>
-    <mobilePhone>test1527706736</mobilePhone>
-    <workPhone>test-1363417320</workPhone>
-    <email>test843558265</email>
-    <birthDay></birthDay>
-    <birthMonth></birthMonth>
-    <birthYear>1988</birthYear>   
-    <secondAdress>test-1812261268</secondAdress>
-    <homeAdress>test-1389063089</homeAdress>
-  </contact>
-  <contact>
-    <firstName>test-1608006985</firstName>
-    <lastName></lastName>
-    <adress></adress>
-    <homePhone></homePhone>
-    <mobilePhone>test-1395607142</mobilePhone>
-    <workPhone>test150772123</workPhone>
-    <email>test-372237361</email>
-    <birthDay>12</birthDay>
-    <birthMonth>July</birthMonth>
-    <birthYear>1988</birthYear>    
-    <secondAdress>test454032799</secondAdress>
-    <homeAdress>test1050001404</homeAdress>
-  </contact>  
-  <contact>
-    <firstName></firstName>
-    <lastName>test-1026304814</lastName>
-    <adress>test339295576</adress>
-    <homePhone>test-1364141402</homePhone>
-    <mobilePhone>test-1950063574</mobilePhone>
-    <workPhone>test-1510678658</workPhone>
-    <email></email>
-    <birthDay>test790163660</birthDay>
-    <birthMonth>January</birthMonth>
-    <birthYear>test-1009614082</birthYear>   
-    <secondAdress>test-2081625580</secondAdress>
-    <homeAdress>test1605770404</homeAdress>
-  </contact>
-  <contact>
-    <firstName></firstName>
-    <lastName></lastName>
-    <adress>test-153098772</adress>
-    <homePhone>test1921321147</homePhone>
-    <mobilePhone>test-1366028135</mobilePhone>
-    <workPhone>test-1816999542</workPhone>
-    <email>test-1764458600</email>
-    <birthDay></birthDay>
-    <birthMonth>October</birthMonth>
-    <birthYear></birthYear>   
-    <secondAdress></secondAdress>
-    <homeAdress></homeAdress>
-  </contact>
+  </contact> 
 </list>

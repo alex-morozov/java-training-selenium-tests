@@ -16,12 +16,12 @@ public class ContactData implements Comparable<ContactData> {
 	private String secondAdress;
 	private String homeAdress;
 
-	public ContactData(String firstName, String secondName, String adress,
+	public ContactData(String firstName, String lastName, String adress,
 			String homePhone, String mobilePhone, String workPhone,
 			String email, String birthDay, String birthMonth, String birthYear,
 			String group, String secondAdress, String homeAdress) {
 		this.firstName = firstName;
-		this.lastName = secondName;
+		this.lastName = lastName;
 		this.adress = adress;
 		this.homePhone = homePhone;
 		this.mobilePhone = mobilePhone;
@@ -79,13 +79,13 @@ public class ContactData implements Comparable<ContactData> {
 		return this.lastName.toLowerCase().compareTo(other.lastName.toLowerCase());			
 	}
 
-	public ContactData withFirstName(String firstname) {
-		this.firstName = firstname;
+	public ContactData withFirstName(String firstName) {
+		this.firstName = firstName;
 		return this;
 	}
 
-	public ContactData withLastName(String lastname) {
-		this.lastName = lastname;
+	public ContactData withLastName(String lastName) {
+		this.lastName = lastName;
 		return this;
 	}
 
@@ -94,18 +94,18 @@ public class ContactData implements Comparable<ContactData> {
 		return this;
 	}
 
-	public ContactData withHomePhone(String homephone) {
-		this.homePhone = homephone;
+	public ContactData withHomePhone(String homePhone) {
+		this.homePhone = homePhone;
 		return this;
 	}
 
-	public ContactData withMobilePhone(String mobilephone) {
-		this.mobilePhone = mobilephone;
+	public ContactData withMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
 		return this;
 	}
 
-	public ContactData withWorkPhone(String workphone) {
-		this.workPhone = workphone;
+	public ContactData withWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
 		return this;
 	}
 
@@ -134,13 +134,13 @@ public class ContactData implements Comparable<ContactData> {
 		return this;
 	}
 
-	public ContactData withSecondAdress(String secondadress) {
-		this.secondAdress = secondadress;
+	public ContactData withSecondAdress(String secondAdress) {
+		this.secondAdress = secondAdress;
 		return this;
 	}
 
-	public ContactData withHomeAdress(String homeadress) {
-		this.homeAdress = homeadress;
+	public ContactData withHomeAdress(String homeAdress) {
+		this.homeAdress = homeAdress;
 		return this;
 	}
 	

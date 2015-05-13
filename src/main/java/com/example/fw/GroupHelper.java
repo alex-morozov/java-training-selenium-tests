@@ -8,7 +8,7 @@ import com.example.utils.SortedListOf;
 
 
 
-public class GroupHelper extends HelperBase {
+public class GroupHelper extends WebDriverHelperBase {
 
 	public GroupHelper(ApplicationManager manager) {
 		super(manager);		
@@ -48,7 +48,7 @@ public class GroupHelper extends HelperBase {
 	public GroupHelper modifyGroup(int index, GroupData group) {
 		 initGroupModification(index);	     
 	     fillGroupForm(group);
-	     submitGroupModification();// не срабатывает
+	     submitGroupModification();
 	     returnToGroupsPage();	
 	     rebuildCache();
 		 return this;

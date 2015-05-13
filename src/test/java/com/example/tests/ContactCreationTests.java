@@ -24,7 +24,7 @@ public class ContactCreationTests extends TestBase {
 	public void addContact (ContactData contact){
 		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();	
 		
-		app.getContactHelper().createGroup(contact);				    
+		app.getContactHelper().createContact(contact);				    
 	    
 	    SortedListOf<ContactData> newList = app.getContactHelper().getContacts();	
 	    
