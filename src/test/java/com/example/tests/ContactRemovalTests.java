@@ -18,11 +18,11 @@ public class ContactRemovalTests extends TestBase {
 		Random rnd = new Random();
 		int index = rnd.nextInt(oldList.size()-1);
 		
-		app.getContactHelper().deleteContact(index);	    
+		app.getContactHelper().deleteContact();	    
 	    
 	    SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    assertThat(newList, equalTo(oldList.without(index)));
-}
-
+}	
+	
 }

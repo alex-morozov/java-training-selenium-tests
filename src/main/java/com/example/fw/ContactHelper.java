@@ -7,7 +7,7 @@ import com.example.utils.SortedListOf;
 
 
 
-public class ContactHelper extends HelperBase {
+public class ContactHelper extends WebDriverHelperBase {
 	
 	public static boolean CREATION = true;
 	public static boolean MODIFICATION = false;
@@ -27,17 +27,17 @@ public class ContactHelper extends HelperBase {
 		
 	
 	private void rebuildCache() {
-		cachedContacts = new SortedListOf<ContactData> ();
+		cachedContacts = new SortedListOf<ContactData>();
 		manager.navigateTo().mainPage();
-		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-		for (WebElement checkbox : checkboxes) {			
-			String title = checkbox.getAttribute("title");			
-			String name = title.substring("Select (".length(), title.length() - ")".length() );
-			cachedContacts.add(new ContactData().withLastName(name));
+		List<WebElement> rows = driver.findElements(By.name("entry"));		
+		for (WebElement row : rows) {				
+			cachedContacts.add(new ContactData()
+			.withFirstName(row.findElement(By.xpath(".//td[2]")).getText())
+			.withLastName(row.findElement(By.xpath(".//td[3]")).getText()));
 		}		
 	}
 	
-	public ContactHelper createGroup(ContactData contact) {
+	public ContactHelper createContact(ContactData contact) {
 		manager.navigateTo().mainPage();
 	    goToAddContact();
 	    fillContactForm(contact, CREATION);	  
@@ -47,8 +47,8 @@ public class ContactHelper extends HelperBase {
 	    return this;
 	}
 	
-	public ContactHelper modifyContact(int index, ContactData contact) {
-	    initContactModification(index);	        
+	public ContactHelper modifyContact(ContactData contact) {
+	    initContactModification();	        
 	    fillContactForm(contact, MODIFICATION);	  
 	    submitContactModification();
 	    manager.navigateTo().returnToHomePage();	
@@ -57,14 +57,13 @@ public class ContactHelper extends HelperBase {
 }
 
 
-public ContactHelper deleteContact(int index) {
-	initContactModification(index);	    	  
+public ContactHelper deleteContact() {
+	initContactModification();	    	  
     submitContactDeletion();
     manager.navigateTo().returnToHomePage();
     rebuildCache();	
     return this;
 }
-	
 	
 
 	public ContactHelper goToAddContact() {
@@ -102,13 +101,13 @@ public ContactHelper deleteContact(int index) {
 		return this;
 	}
 
-	public ContactHelper initContactModification(int index) {
-		selectContactByIndex(index);	
+	public ContactHelper initContactModification() {
+		selectContactByIndex();	
 		return this;
 	}
 
-	public ContactHelper selectContactByIndex(int index) {
-		click(By.xpath("//*[@id='maintable']/tbody/tr[" + index + "]/td[7]/a/img"));
+	public ContactHelper selectContactByIndex() {
+		click(By.xpath("//*[@id='maintable']/tbody/tr[2]/td[7]/a/img"));
 		return this;
 	}
 
