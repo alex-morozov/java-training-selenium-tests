@@ -12,7 +12,7 @@ protected WebDriver driver;
 
 public WebDriverHelperBase (ApplicationManager manager){
 	super(manager);	
-	this.driver=manager.driver;
+	this.driver=manager.getDriver();
 }
 
 public boolean isElementPresent(By by) {
